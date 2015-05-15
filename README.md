@@ -1,11 +1,13 @@
 ReactLink-Pipe
 ================
 
-## Background on ReactLink
+Pipeline for ReactLink data binding methods for things like data validation and formatting.
+
+### Background on ReactLink
 
 [React](https://facebook.github.io/react/) provides a method, known as [ReactLink](https://facebook.github.io/react/docs/two-way-binding-helpers.html), to update `this.state` on a component whenever the value of an `<input>` field changes. This method is exposed by the convenient mixin `React.addons.LinkedStateMixin`, which essentially just binds the `onChange` event handler to the `this.setState()` function of the `<input>` field.
 
-## Transforms and Pipelines
+### Transforms and Pipelines
 
 This module exposes a helper function that provides an easy and convenient way to setup a pipeline of transform functions between getting and setting values in the ReactLink flow.
 
@@ -20,13 +22,12 @@ Install it with `npm install --save reactlink-pipe`.
 Runs the first transform function over the state source before returning it to React.
 
 ```js
-var LinkedImmutableStateMixin = require('reactlink-immutable');
 var pipeLink = require('reactlink-pipe');
 
 function caps(text) { return text && text.toUpperCase(); }
 
 var WithLink = React.createClass({
-  mixins: [LinkedImmutableStateMixin],
+  mixins: [LinkedStateMixin],
   getInitialState: function() {
     return { name: 'foo' };
   },
@@ -44,13 +45,12 @@ var WithLink = React.createClass({
 Runs the second transform function over the React value before returning it to the state source.
 
 ```js
-var LinkedImmutableStateMixin = require('reactlink-immutable');
 var pipeLink = require('reactlink-pipe');
 
 function caps(text) { return text && text.toUpperCase(); }
 
 var WithLink = React.createClass({
-  mixins: [LinkedImmutableStateMixin],
+  mixins: [LinkedStateMixin],
   getInitialState: function() {
     return { name: 'foo' };
   },
@@ -67,16 +67,19 @@ var WithLink = React.createClass({
 ### Or put transforms for both getting and setting!
 
 ```js
-var LinkedImmutableStateMixin = require('reactlink-immutable');
 var pipeLink = require('reactlink-pipe');
 
 function toObj(text) { return { something: text } };
 function fromObj(obj) { return obj.something };
 
 var WithLink = React.createClass({
-  mixins: [LinkedImmutableStateMixin],
+  mixins: [LinkedStateMixin],
   getInitialState: function() {
-    return { name: 'foo' };
+    return {
+      name: {
+        something: 'foo'
+      }
+    };
   },
   render: function() {
     return (
