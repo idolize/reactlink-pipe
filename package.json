@@ -1,0 +1,40 @@
+{
+  "name": "reactlink-pipe",
+  "version": "0.1.0",
+  "description": "Pipeline for ReactLink data binding methods for things like data validation and formatting",
+  "author": {
+    "name": "David Idol",
+    "url": "http://daveidol.com"
+  },
+  "homepage": "https://github.com/idolize/reactlink-pipe",
+  "repository": {
+    "type": "git",
+    "url": "git://github.com/idolize/reactlink-pipe.git"
+  },
+  "bugs": {
+    "url": "https://github.com/idolize/reactlink-pipe/issues"
+  },
+  "main": "index.js",
+  "scripts": {
+    "test": "mocha test"
+  },
+  "devDependencies": {
+    "chai": "^2.3.0",
+    "mocha": "^2.2.5"
+  },
+  "keywords": [
+    "react",
+    "pipe",
+    "pipeline",
+    "formating",
+    "formatter",
+    "validation",
+    "validator",
+    "ReactLink",
+    "LinkedStateMixin",
+    "linkState",
+    "valueLink",
+    "binding"
+  ],
+  "license": "MIT"
+}
