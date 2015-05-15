@@ -17,7 +17,9 @@ This let's you do things like automatically format text entered by a user as upp
 
 Install it with `npm install --save reactlink-pipe`.
 
-### State source getting transform
+Exposes function of form: `pipeLink(getValTransformFunc, reactLinkObject, setValTransformFunc)`.
+
+### Transformation on getting state source
 
 Runs the first transform function over the state source before returning it to React.
 
@@ -40,7 +42,7 @@ var WithLink = React.createClass({
 });
 ```
 
-### State source setting transform
+### Transformation on setting state source
 
 Runs the second transform function over the React value before returning it to the state source.
 
