@@ -85,7 +85,7 @@ var WithLink = React.createClass({
   },
   render: function() {
     return (
-      <input type="text" valueLink={removeWhiteSpace, pipeLink(fromObj, this.linkState('name'), toObj)} />
+      <input type="text" valueLink={pipeLink(fromObj, this.linkState('name'), toObj)} />
     );
   }
 });

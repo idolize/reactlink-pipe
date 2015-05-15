@@ -1,6 +1,6 @@
 {
   "name": "reactlink-pipe",
-  "version": "0.1.1",
+  "version": "0.1.2",
   "description": "Pipeline for ReactLink data binding methods for things like data validation and formatting",
   "author": {
     "name": "David Idol",
