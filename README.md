@@ -1,7 +1,9 @@
-ReactLink-Pipe
+ReactLink-Pipe [![Version][npm-image]][npm-url]
 ================
 
 Pipeline for ReactLink data binding methods for things like data validation and formatting.
+
+
 
 ### Background on ReactLink
 
@@ -95,3 +97,7 @@ var WithLink = React.createClass({
 
 - Author: [David Idol](http://daveidol.com)
 - License: [MIT](http://opensource.org/licenses/MIT)
+
+
+[npm-image]: https://img.shields.io/npm/v/reactlink-pipe.svg?style=flat-square
+[npm-url]: https://www.npmjs.org/package/reactlink-pipe
