@@ -1,7 +1,7 @@
 ReactLink-Pipe [![Version][npm-image]][npm-url]
 ================
 
-Pipeline for ReactLink data binding methods for things like data validation and formatting.
+Pipeline for ReactLink data binding methods; used for things like data validation and formatting.
 
 
 
@@ -13,7 +13,7 @@ Pipeline for ReactLink data binding methods for things like data validation and 
 
 This module exposes a helper function that provides an easy and convenient way to setup a pipeline of transform functions between getting and setting values in the ReactLink flow.
 
-This let's you do things like automatically format text entered by a user as uppercase, or convert a special class to JSON before trying to display it in your React component.
+This lets you do things like automatically format text entered by a user as uppercase, or convert a special class to JSON before trying to display it in your React component.
 
 ## Usage
 
@@ -59,7 +59,7 @@ var WithLink = React.createClass({
     return { name: 'foo' };
   },
   render: function() {
-    // Will display "foo" on first render, while this.state.name will still be set to "FOO" when changed
+    // Will display "foo" on first render, while this.state.name will be set to "FOO" when changed
     return (
       <input type="text" valueLink={pipeLink(this.linkState('name'), caps)} />
     );
@@ -80,14 +80,15 @@ var WithLink = React.createClass({
   mixins: [LinkedStateMixin],
   getInitialState: function() {
     return {
-      name: {
+      obj: {
         something: 'foo'
       }
     };
   },
   render: function() {
+    // Will display "foo", even though this.state.obj is stored as an object and not a string
     return (
-      <input type="text" valueLink={pipeLink(fromObj, this.linkState('name'), toObj)} />
+      <input type="text" valueLink={pipeLink(fromObj, this.linkState('obj'), toObj)} />
     );
   }
 });
