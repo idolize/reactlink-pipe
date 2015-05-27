@@ -36,7 +36,7 @@ var WithLink = React.createClass({
     return { name: 'foo' };
   },
   render: function() {
-    // Will display "FOO" on first render, while this.state.name will still be "foo"
+    // Will display "FOO", while this.state.name will still be "foo"
     return (
       <input type="text" valueLink={pipeLink(caps, this.linkState('name'))} />
     );
@@ -59,7 +59,7 @@ var WithLink = React.createClass({
     return { name: 'foo' };
   },
   render: function() {
-    // Will display "foo" on first render, while this.state.name will be set to "FOO" when changed
+    // Will display "foo", while this.state.name will be set to "FOO" when changed
     return (
       <input type="text" valueLink={pipeLink(this.linkState('name'), caps)} />
     );
@@ -86,7 +86,8 @@ var WithLink = React.createClass({
     };
   },
   render: function() {
-    // Will display "foo", even though this.state.obj is stored as an object and not a string
+    // Will display "foo", even though this.state.obj is stored as an object and not a string.
+    // this.state.obj.something will continue to update and display properly as the user types.
     return (
       <input type="text" valueLink={pipeLink(fromObj, this.linkState('obj'), toObj)} />
     );
